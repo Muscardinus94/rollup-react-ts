@@ -1,0 +1,1 @@
+{"version":3,"file":"common.mjs","sources":["../../../src/utils/common.ts"],"sourcesContent":["export function getEnv() {\n  return process.env.NODE_ENV || \"development\";\n}\n"],"names":["getEnv","process","env","NODE_ENV"],"mappings":"SAAgBA,MAAMA,GAAA;AACpB,EAAA,OAAOC,OAAO,CAACC,GAAG,CAACC,QAAQ,IAAI,aAAa,CAAA;AAC9C;;;;"}

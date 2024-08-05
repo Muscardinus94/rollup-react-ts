@@ -1,23 +1,41 @@
 'use strict';
 
-var React = require('react');
+var jsxRuntime = require('react/jsx-runtime');
+var moment = require('moment');
+
+var Badge = "cc8b27153a8724c5.svg";
+
+var Thumbnail = "d19000a9fd7c9aeb.png";
 
 function Button(_a) {
   var children = _a.children;
-  return /*#__PURE__*/React.createElement("button", null, children);
+  console.log(Badge);
+  console.log(Thumbnail);
+  return jsxRuntime.jsx("button", {
+    children: children
+  });
 }
 
 function Typography(_a) {
   var children = _a.children;
-  return /*#__PURE__*/React.createElement("span", null, children);
+  return jsxRuntime.jsx("span", {
+    children: children
+  });
 }
 
 function getEnv() {
   return process.env.NODE_ENV || "development";
 }
 
+moment.locale("ko");
 function Viewer() {
-  return /*#__PURE__*/React.createElement("div", null, "Environment: ", getEnv(), /*#__PURE__*/React.createElement(Button, null, "Button"), /*#__PURE__*/React.createElement(Typography, null, "Typography"));
+  return jsxRuntime.jsxs("div", {
+    children: ["Current Time: ", moment.now(), "Environment: ", getEnv(), jsxRuntime.jsx(Button, {
+      children: "Button"
+    }), jsxRuntime.jsx(Typography, {
+      children: "Typography"
+    })]
+  });
 }
 
 exports.Button = Button;
