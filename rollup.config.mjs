@@ -10,6 +10,7 @@ import { dts } from "rollup-plugin-dts";
 import packageJson from "./package.json" assert { type: "json" };
 import builtins from "builtin-modules";
 import fs from "node:fs";
+import dotenv from "rollup-plugin-dotenv";
 
 // const __filename = fileURLToPath(import.meta.url);
 // const __dirname = path.dirname(__filename);
@@ -77,9 +78,10 @@ function generateConfig(input, output, format) {
         typescript(),
         url({
           include: ["**/*.svg", "**/*.png", "**/*.jpg", "**/*.gif"],
-          limit: 0, // Always inline files
+          limit: Infinity, // Always inline files
           emitFiles: true, // Emit files as separate files (default: true)
         }),
+        dotenv(),
       ],
       external: external(),
     },

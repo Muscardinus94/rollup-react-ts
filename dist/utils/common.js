@@ -1,7 +1,7 @@
 'use strict';
 
 function getEnv() {
-  return process.env.NODE_ENV || "development";
+  return "HENRY";
 }
 
 exports.getEnv = getEnv;
